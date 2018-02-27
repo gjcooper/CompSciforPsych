@@ -35,7 +35,7 @@
               <li>reading and contributing to open source</li>
               <li>OO/Functional/Procedural languages</li>
               <li>Language choice and dev env</li>
-              <li>Experimewntal Programming</li>
+              <li>Experimental Programming</li>
             </ul>
           </aside>
         </section>
@@ -181,6 +181,46 @@
         </section>
         <section>
           <!--Choosing the right structure and algorithm-->
+          <section>
+            <h3>Basic Building Blocks</h3>
+            <ul>
+              <li>Arrays, Linked Lists, Stacks and Queues</li>
+              <li>Trees and Graphs</li>
+              <li>Dictionaries and Hashing</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Arrays are indexed, fast access, fixed size, can be expensive to add elements to</li>
+                <li>Linked Lists - Linear time to access elements, fast to add elements</li>
+                <li>Stacks - LIFO, usually implemented on top of LL</li>
+                <li>Queue - LILO, usually implmented on top of LL</li>
+                <li>Trees - Many examples, Binary tree search O(logn)</li>
+                <li>Graphs - representing directed/undirected graphs from mathematics, edge weights etc</li>
+                <li>Dictionaries - Represent key/value pairs. Fast lookup and search</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Greedy Algorithms</h3>
+            <p>Make the locally optimal choice with the hope of finding a global optimum</p>
+            <aside class="notes">
+              For example the travelling salesman problem
+            </aside>
+          </section>
+          <section>
+            <h3>Divide and Conquer</h3>
+            <p>Break a problem down into smaller subunits that can be solved simply</p>
+            <p>Recursion is the way this is achieved, typically by allowing a functiuon to call itself</p>
+            <aside class="notes">
+              <p>Quicksort is an example</p>
+              <ol>
+                <li>Pick a pivot value from the list</li>
+                <li>Reorder the list so all values less than pivot a to it's left and all values larger are to the right</li>
+                <li>Recursively apply steps 1 and 2 to the left and right sub-lists</li>
+                Pick a pivot value
+              </ol>
+            </aside>
+          </section>
         </section>
         <section>
           <!--Development Environments-->
