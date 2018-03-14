@@ -56,7 +56,7 @@
                 <li>Analogous to world wide web</li>
                 <li>Variations, heirarchical or network models</li>
                 <li>Quickly unwieldly</li>
-                <li>navigate along multile nodes to gather all data required</li>
+                <li>Navigate along multiple nodes to gather all data required</li>
               </ul>
             </aside>
           </section>
@@ -172,7 +172,7 @@ ALTER TABLE [table] ADD COLUMN [column] VARCHAR(120)
 
 ALTER TABLE [table] ADD COLUMN [column] int NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
-INSERT INTO [table] ([column], [column]) VALUES ('[value]', [value]');
+INSERT INTO [table] ([column], [column]) VALUES ('[value]', '[value]');
 
 NOW() -- datetime input
 </code></pre>
@@ -316,6 +316,127 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
                 <li>Meant to be fast and network efficient</li>
                 <li>Capable of handling large projects</li>
                 <li>Rise in large part because of the popularity of GitHub</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <!--Git Practical-->
+          <section>
+            <h2>Git Practical Session</h2>
+          </section>
+          <section>
+            <h3>Git Command Line Basics</h3>
+            <pre><code class="bash">> git init [directory]
+
+> git clone [repo]
+
+> git config user.name [name]</code></pre>
+            <aside class="notes">
+              <p>Other config options</p>
+              <ul>
+                <li>core.autocrlf</li>
+                <li>core.editor</li>
+                <li>user.email</li>
+                <li>merge.tool</li>
+              </ul>
+              <p>Use the --global option for all repos</p>
+            </aside>
+          </section>
+          <section>
+            <h3>Adding files to a repository</h3>
+            <pre><code class="bash">> git add [directory]
+
+> git commit -v
+
+> git commit -m [message]</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>git add one or more files</li>
+                <li>git add patch</li>
+                <li>git commit --amend</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Viewing the state of the repo</h3>
+            <pre><code class="bash">> git status
+
+> git log
+
+> git diff</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>git log --graph --decorate</li>
+                <li>git log --author="[pattern]"</li>
+                <li>git log --grep="[pattern]"</li>
+                <li>Show glga</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Undoing Edits</h3>
+            <pre><code class="bash">> git revert [commit]
+
+> git reset [file]
+
+> git clean -n</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>revert creates new commit to reverse</li>
+                <li>git reset --hard and git reset --soft</li>
+                <li>git clean -f (to force clean)</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Branches</h3>
+            <pre><code class="bash">> git branch
+
+> git checkout -b [branchname]
+
+> git merge [branchname]
+
+> git rebase [branchname]</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Drop the -b for an existing branch</li>
+                <li>merge can be automatic or may have conflicts</li>
+                <li>rebase alters history, generally only for non shared code</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Remote Repositories</h3>
+            <pre><code class="bash">> git remote add [name] [url]
+
+> git fetch [remote] [branch]
+
+> git pull [remote]
+
+> git push [remote] [branch]</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>url can be local, ssh, https</li>
+                <li>for fetch leave off [branch] to get all remote refs</li>
+                <li>runs fetch followed by merge</li>
+                <li>sends local branch to remote</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>GitHub</h3>
+            <ul>
+              <li>If you don't have an account, create one</li>
+              <li>Make a new repository</li>
+              <li>Clone it locally</li>
+              <li>Add some files</li>
+              <li>Push changes back to GitHub</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Bitbucket</li>
+                <li>GitLab</li>
               </ul>
             </aside>
           </section>
