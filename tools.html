@@ -25,12 +25,13 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-          <h1>Technologies/Tools</h1>
+          <h1>Technologies & Tools</h1>
           <aside class="notes">
             Git, SQL and DB
           </aside>
         </section>
         <section>
+          <!--Database Background and Theory-->
           <section>
             <h1>Databases</h1>
             <img src="images/database.jpg" alt="Databases" />
@@ -92,8 +93,150 @@
               </ol>
             </aside>
           </section>
+        </section>
+        <section>
+          <!--Database Practical-->
           <section>
             <h2>SQL Practical</h2>
+          </section>
+          <section>
+            <h3>Logging into the server</h3>
+            <ul>
+              <li>21 places, you should have a number</li>
+              <li>The server is newcl.australiaeast.cloudapp.azure.com</li>
+              <li>Access via terminal or putty (https://www.putty.org/)</li>
+              <li>Username is Training&ltnumber&gt, database is newcl_&ltnumber&gt</li>
+              <li>So for number 66 username is Training66 and datbase is newcl_66</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Accessing command line interface to mysql</h3>
+            <pre><code class="bash">> mysql -p # Will prompt for password</code></pre>
+            <p>Alternatively, </p>
+            <pre><code class="bash">> mysql -u [username] -p [database] # Go straight to database</code></pre>
+            <p>Export a database dump</p>
+            <pre><code class="bash">> mysqldump -u [username] -p [database] > db_backup.sql</code></pre>
+            <pre><code class="bash">> mysql -u [username] -p -h localhost [database] < db_backup.sql</code></pre>
+          </section>
+          <section>
+            <h3>Viewing and Manipulating Databases</h3>
+            <pre><code class="sql">show databases; --Show all databases
+ 
+create database [database]; --Create a new database
+
+use [database]; --Select a database to use
+
+show tables; --Show all the tables in the current database
+
+describe [table]; --Show the table structure</code></pre>
+            <aside class="notes">
+              Look at data from : https://osf.io/2eqh3/
+            </aside>
+          </section>
+          <section>
+            <h3>SQL Data Types</h3>
+            <ul>
+              <li>BOOLEAN</li>
+              <li>INTEGER</li>
+              <li>DECIMAL(p,s) or NUMERIC(p,s)</li>
+              <li>FLOAT</li>
+              <li>DATE, TIME</li>
+              <li>CHARACTER(n), VARCHAR(n)</li>
+              <li>...</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Special Fields</h3>
+            <ul>
+              <li>NOT NULL</li>
+              <li>AUTO_INCREMENT</li>
+              <li>PRIMARY KEY</li>
+              <li>FOREIGN KEY</li>
+            </ul>
+            <aside class="notes">
+              <pre><code>CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);</code></pre>
+            </aside>
+          </section>
+          <section>
+            <h3>Making Tables and Inserting Data</h3>
+            <pre><code class="sql">CREATE TABLE [table] ([column] VARCHAR(120), [another-column] DATETIME)
+
+ALTER TABLE [table] ADD COLUMN [column] VARCHAR(120)
+
+ALTER TABLE [table] ADD COLUMN [column] int NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+INSERT INTO [table] ([column], [column]) VALUES ('[value]', [value]');
+
+NOW() -- datetime input
+</code></pre>
+          </section>
+          <section>
+            <h3>Selecting Data</h3>
+            <pre><code class="sql">SELECT * FROM [table];
+
+SELECT [column], [another-column] FROM [table];
+
+SELECT COUNT([column]) FROM [table];
+
+SELECT X WHERE [column] = [value];
+
+SELECT X WHERE [column] LIKE '%[value]%';
+
+SELECT X WHERE [column] ORDER BY [column] ASC LIMIT [value]; -- (Order: DESC, ASC)
+
+SELECT X WHERE [column] BETWEEN [value1] and [value2];</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Can change column name with AS in SELECT statement</li>
+                <li>Selectors include <, >, !=, combinations with AND and OR</li>
+                <li>LIKE has '%[value]%, '[value]%', '[val_ue]'</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Update and Delete Data</h3>
+            <pre><code class="sql">UPDATE [table] SET [column] = '[new-value]' WHERE [column] = [value];
+
+DELETE FROM [table] WHERE [column] = [value];
+
+DELETE FROM [table];
+
+ALTER TABLE [table] DROP COLUMN [column];
+
+DROP TABLE [table];
+
+DROP DATABASE [database];
+</code></pre>
+          </section>
+          <section>
+            <h3>Aggregation</h3>
+            <pre><code class="sql">SELECT distinct name, email, acception FROM owners WHERE acception = 1 AND date >= 2015-01-01 00:00:00
+
+SELECT SUM([column]) FROM [table];
+
+SELECT [category-column], SUM([column]) FROM [table] GROUP BY [category-column];
+
+SELECT MAX([column]) FROM [table];
+
+SELECT [category-column], ROUND(AVG([column]), 2) FROM [table] GROUP BY [category-column];</code></pre>
+          <aside class="notes">
+            MIN, MAX and AVG available
+          </aside>
+          </section>
+          <section>
+            <h3>Multiple Tables</h3>
+            <pre><code class="sql">SELECT [t1].[column], [t1].[another-column], [t2].[column] FROM [t1], [t2];
+
+SELECT * FROM [t1] INNER JOIN [t2] ON [t1].[column] = [t2].[column];
+
+SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code></pre>
+
           </section>
         </section>
         <section>
