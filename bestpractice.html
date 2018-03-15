@@ -30,6 +30,67 @@
             DRY, Correcty 1st/Fast 2nd, Refactoring, Testing, Commenting Practices, Consistent code style, !Deep nestinng, Line Length, File/Folder Structure
           </aside>
         </section>
+        <section>
+          <section>
+            <h2>Refactoring</h2>
+            <img src="images/decking.jpg" alt="Oil the decking" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/deck-wood-paint-wooden-house-1744953/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Keep your code clean</li>
+                <li>When you edit your code, leave it cleaner than when you found it</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>DRY</h3>
+            <pre><code class="python">fixation.present()
+exp.clock.wait(fixtime - first_stim.preload())
+first_stim.present()
+key, rt = exp.keyboard.wait(keys=trialkeys,
+                            duration=trial_timeout)
+fixation.present()
+exp.clock.wait(fixtime - second_stim.preload())
+second_stim.present()
+key, rt = exp.keyboard.wait(keys=trialkeys,
+                            duration=trial_timeout)
+fixation.present()
+exp.clock.wait(fixtime - third_stim.preload())
+third_stim.present()
+key, rt = exp.keyboard.wait(keys=trialkeys,
+                            duration=trial_timeout)
+            </code></pre>
+          </section>
+          <section>
+            <h3>Variable Names</h3>
+            <pre><code class="python">list = ['sub01', 'sub02', 'sub03', 'sub04']
+for l in list:
+    print('Subject ID is ' + l)
+    store.send(l, data[l])</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Do not override built-ins</li>
+                <li>Descriptive names for your variables</li>
+                <li>Even iteration indices</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Deep Nesting</h3>
+            <pre><code class="python">def buildText(self):
+    final_str = ''
+    for section in cycle('1234'):
+        if len(final_str) < self.textlength:
+            final_str += section
+        else:
+            if self.reverseText:
+                return reversed(final_str)
+						else:
+                return final_str
+            </code></pre>
+          </section>
+        </section>
 			</div>
 		</div>
 
