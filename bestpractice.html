@@ -27,7 +27,7 @@
 				<section>
           <h1>Best Practices</h1>
           <aside class='notes'>
-            Automate Everything (Batch editing over manual editing, cleaning files, executing workflows (bash script or build system (cmake etc)), Correct 1st/Fast 2nd, Testing, Commenting Practices, Consistent code style, Line Length, File/Folder Structure, Pair Programming and Code Review
+            Automate Everything (Batch editing over manual editing, cleaning files, executing workflows (bash script or build system (cmake etc)), Correct 1st/Fast 2nd, Testing, File/Folder Structure, Pair Programming and Code Review
           </aside>
         </section>
         <section>
@@ -87,9 +87,8 @@ for l in list:
         else:
             if self.reverseText:
                 return reversed(final_str)
-						else:
-                return final_str
-            </code></pre>
+            else:
+                return final_str</code></pre>
           </section>
         </section>
         <section>
@@ -109,6 +108,155 @@ for l in list:
           </section>
           <section>
             <h3>Too many comments</h3>
+            <pre><code class="python"># Grab the data
+data = data_source.get_next_data_chunk()
+# Clean the data
+cleaned_data = remove_missing_rows(data)
+# Run our analysis
+analysed_data = analyse(cleaned_data)
+# IF we want to display:
+if display:
+    # Show it onscreen
+    plt.plot(analysed_data)
+    plt.show()</code></pre>
+          </section>
+          <section>
+            <h3>Commented out code</h3>
+            <pre><code class="r">#mRTs <- getMeanRTs(strats)
+#annotation <- getAnnotations(strats)
+#plotMeanRTS(mRTs, annotation)
+#ggsave('MICs.png')</code></pre>
+          </section>
+          <section>
+            <h3>The worst comments</h3>
+            <pre><code class="python">def analyse_RTs(trials):
+    '''Takes a list of trials (trial_type/RT) pairs and returns
+    a dict where keys are trial_types and values are avgRT'''
+    RTs_by_type = dict(); corr_by_type = dict()
+    for trl, response, RT in trials:
+        if trl in RTs_by_type:
+            RTs_by_type[trl].append(RT)
+            corr_by_type[trl].append(isCorrect(trial, response))
+        else:
+            RTs_by_type[trl] = [RT]
+            corr_by_type[trl] = [isCorrect(trial, response)]
+    RTavg = {k: mean(v) for k, v in RTs_by_type.iteritems()}
+    percent_corr = {k: mean(v) for k, v in corr_by_type.iteritems()}
+    return RTavg, percent_corr</code></pre>
+          </section>
+          <section>
+            <h3>A good comment</h3>
+            <ul>
+              <li>Should not have to explain what</li>
+              <li>Should only have to explain why</li>
+              <li>Some comments can serve as API documentation</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <!--CODE STYLE-->
+          <section>
+            <h2>Code Styles</h2>
+            <ul>
+              <li>Python - PEP8, Google Python Style Guide</li>
+              <li>R - Google R Style Guide, Tidyverse style guide</li>
+              <li>Javascript - Google Javascript Style Guide, Airbnb Javascript Style Guide</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Consistent style within a project</li>
+                <li>Consistent Style within a community</li>
+                <li>When contributing to a project check the currently used style</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Indentation</h3>
+            <pre><code class="R">MIC <- function (strategy) {
+	first.term <- mean(strategy$ll) - mean(strategy$hl)
+	second.term <- mean(strategy$lh) - mean(strategy$hh)
+	return(first.term - second.term)
+}</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Spaces vs Tabs</li>
+                <li>How many spaces</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Names</h3>
+            <pre><code class="python">class ClassName:
+A_CONSTANT = 3.14
+
+def function_name(variable_name):
+    return A_CONSTANT * variable_name ** 2</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>snake case</li>
+                <li>CamelCase</li>
+                <li>UPPERCASE</li>
+                <li>Hungarian Notation</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Whitespace</h3>
+            <pre><code class="python">exp(trial[1], {response: 4})  # Good
+exp( trial[ 1 ], { response: 4 } )  # Bad
+
+if x == 4: print x, y; x, y = y, x  # Yes
+if x == 4 : print x , y ; x , y = y , x  # No
+
+x[3]  # Good
+x [3]  # Bad</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Avoid trailing whitespace</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Syntactic style</h3>
+            <ul>
+              <li>. vs _ in R</li>
+              <li>Where to put your curly braces?</li>
+              <li>Semicolons in R</li>
+              <li>Assignment operators in R (<- vs =)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Line Length</h3>
+            <pre><code class="python"># Here is a long line
+the_result = analysis_function(parameter1, parameter2, modifier=option1, display=True)
+
+# Fixed
+the_result = analysis_function(parameter1,
+                               parameter2,
+                               modifier=option1,
+                               display=True)</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>A lot of style guides recommend 80 chars wide</li>
+                <li>Could be more, but not too much more</li>
+                <li>Optimal line length for text is ~60, with indentation in code can be longer</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>File/Folder Structure</h3>
+            <ul>
+              <li>Packages and modules in python</li>
+              <li>Class folder in Matlab</li>
+              <li>R project subfolders</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>__init__.py files etc</li>
+                <li>@ClassName folder name for multiple files with one class</li>
+                <li>named subfolder R with functions only defined, data/output/etc subfolders</li>
+              </ul>
+            </aside>
           </section>
         </section>
 			</div>
