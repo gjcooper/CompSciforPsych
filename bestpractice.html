@@ -27,7 +27,7 @@
 				<section>
           <h1>Best Practices</h1>
           <aside class='notes'>
-            Automate Everything (Batch editing over manual editing, cleaning files, executing workflows (bash script or build system (cmake etc)), Correct 1st/Fast 2nd, Testing, File/Folder Structure, Pair Programming and Code Review
+            Automate Everything (Batch editing over manual editing, cleaning files, executing workflows (bash script or build system (cmake etc)), Correct 1st/Fast 2nd, Testing
           </aside>
         </section>
         <section>
@@ -255,6 +255,73 @@ the_result = analysis_function(parameter1,
                 <li>__init__.py files etc</li>
                 <li>@ClassName folder name for multiple files with one class</li>
                 <li>named subfolder R with functions only defined, data/output/etc subfolders</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <!--Checking Code-->
+          <section>
+            <h2>Checking over your code</h2>
+            <img src="images/qc.jpg" alt="Quality Control" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/businesswoman-presentation-suit-571153/">Pixabay</a></small>
+          </section>
+          <section>
+            <h3>Automated Code checkers</h3>
+            <ul>
+              <li>Python: PyLint, Flake8, McCabe Complexity Checker, MyPy</li>
+              <li>R: R CMD check, RStudio (Options-Code-Diagnostics), lintr</li>
+              <li>Matlab: Code Analyser Report, general Matlab editor code analysis</li>
+              <li>Javascript: JSHint, JSLint, JSCS, acorn</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Linters check code style errors, bugs</li>
+                <li>MyPy does type analysis</li>
+                <li>R CMD check tests package suitability for CRAN</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Pair Programming</h3>
+            <img src="images/pair.jpg" alt="Pair Programming" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/office-two-people-business-team-1209640/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Can be quite powerful</li>
+                <li>Rarely done in the wild</li>
+                <li>Both people need to be invested in the code</li>
+                <li>Best used for specific, short use cases of difficult code</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Code Review</h3>
+            <ul>
+              <li>DON'T DO: Can you look over my code/experiment</li>
+              <li>DO: Can you check that this function/feature is working</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Be specific about what code you want checked</li>
+                <li>Make sure you clearly state what the code being reviewed should be doing</li>
+                <li>Highlight any specific aspects you want checked</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Rubber Duck Debugging</h3>
+            <img src="images/rubberduck.jpg" alt="Rubber Duck" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/rubber-duck-duck-doll-546253/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>For debugging</li>
+                <li>Explain line by line what is happening to the rubber duck</li>
+                <li>Or other inanimate object</li>
+                <li>Often the problem will resolve itself</li>
               </ul>
             </aside>
           </section>
