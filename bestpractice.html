@@ -26,9 +26,6 @@
 			<div class="slides">
 				<section>
           <h1>Best Practices</h1>
-          <aside class='notes'>
-            Automate Everything (Batch editing over manual editing, cleaning files, executing workflows (bash script or build system (cmake etc)), Correct 1st/Fast 2nd, Testing
-          </aside>
         </section>
         <section>
           <!--REFACTORING-->
@@ -260,7 +257,7 @@ the_result = analysis_function(parameter1,
           </section>
         </section>
         <section>
-          <!--Checking Code-->
+          <!--CHECKING CODE-->
           <section>
             <h2>Checking over your code</h2>
             <img src="images/qc.jpg" alt="Quality Control" />
@@ -367,6 +364,83 @@ the_result = analysis_function(parameter1,
               <li>Bash (zsh, powershell, ...) scripting</li>
               <li>Workflow tools (nipype, Luigi, etc)</li>
               <li>Build systems (Makefile, cmake)</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <!--OPTIMISATION-->
+          <section>
+            <h2>Optimising your code</h2>
+            <img src="images/money.png" alt="TimeIsMoney" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/stopwatch-time-money-saying-3216241/">Pixabay</a></small>
+            <aside class="notes">
+              <p>Optimise for</p>
+              <ul>
+                <li>Speed</li>
+                <li>Memory Usage</li>
+                <li>Power/CPU usage</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>When to optimise</h3>
+            <ul>
+              <li>When the program is correct</li>
+              <li>When speed/memory etc is a pain point</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How to optimise</h3>
+            <ul>
+              <li>Analyse your code</li>
+              <li>Focus on points of maximal gain first</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <!--TESTING-->
+          <section>
+            <h2>Testing your code</h2>
+            <img src="images/magnify.png" alt="Magnify the text" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/magnifying-glass-lens-bug-zoom-34032/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Unit testing</li>
+                <li>Integration testing</li>
+                <li>Functional testing</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Unit testing</h3>
+            <ul>
+              <li>Tests small pieces of code for correctness</li>
+              <li>Great for verifying that changes do not break functionality</li>
+            </ul>
+            <aside class="notes">
+              <p>Refactoring, Optimisation</p>
+              <ul>
+                <li>Python: unittest, pytest, nose</li>
+                <li>R: testthat, RUnit</li>
+                <li>Matlab: Internal testing framework, assert, runtests etc</li>
+                <li>Javascript: Jest, Ava, Karma, ...</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Integration Testing</h3>
+            <ul>
+              <li>Larger units</li>
+              <li>Hardware/Software interactions tested</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Functional Testing</h3>
+            <ul>
+              <li>User level testing</li>
+              <li>Black box testing</li>
             </ul>
           </section>
         </section>
