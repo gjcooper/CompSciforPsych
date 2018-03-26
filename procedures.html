@@ -129,26 +129,147 @@
         </section>
         <section>
           <!--Agile vs Waterfall-->
+          <section>
+            <h2>Project Management Methodologies</h2>
+          </section>
+          <section>
+            <h3>Traditional  (Waterfall)</h3>
+            <img src="images/waterfall.jpg" alt="Waterfall" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/waters-nature-waterfall-river-sky-3241402/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Requirements, Analysis, Design, Construction, Testing, Deployment</li>
+                <li>Estimates of time to build are next to impossible</li>
+                <li>Requirements change as customers test</li>
+                <li>Costs can snowball</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>Newer (Agile) Methodologies</h3>
+            <img src="images/agile.jpg" alt="Climbing Mountains" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/adventure-height-level-arm-1807524/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Iterative Team based approach, same steps</li>
+                <li>Deliver a basic prototype early, involve the customer</li>
+                <li>Project evolves with changing requirements</li>
+                <li>Should always be a working version available, so costs can be managed</li>
+              </ul>
+            </aside>
+          </section>
         </section>
         <section>
           <!--Dev Ops and Docker-->
+          <section>
+            <h2>DevOps</h2>
+            <aside class="notes">
+              <ul>
+                <li>Development Operations</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h3>DevOps Toolchain</h3>
+            <ul>
+              <li>Source Code Management</li>
+              <li>Continuous Integration</li>
+              <li>Continuous Testing</li>
+              <li>Automated Packaging</li>
+              <li>Release automation, change management</li>
+              <li>Infrastructure Configuration and Management</li>
+              <li>Application Performance Monitoring</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Containers</h3>
+            <ul>
+              <li>Servers</li>
+              <li>Virtual Machines</li>
+              <li>Docker</li>
+              <li>Virtual Environments</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Servers - hard to manage, problems with compatibility to dev machines</li>
+                <li>Virtual Machines - Can still be differences, but easier management tools than standalone servers</li>
+                <li>Docker/Containers - Lightweight, self contained. Same image can be used for dev and prod (But it worked on my machine)</li>
+                <li>Virtual Environments - Language specific, what I use for all python projects</li>
+              </ul>
+            </aside>
+          </section>
         </section>
         <section>
           <!--Library Packaging-->
           <section>
             <h2>Packaging a Library</h2>
+            <aside class="notes">
+              <ul>
+                <li>You've written some analysis code</li>
+                <li>You want to share it and make it easily accessible</li>
+                <li>Package it for your implementation language</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>PyPI</h3>
+            <img src="images/cheeseshop.jpg" alt="Cheese Shop" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/cheese-shop-cheese-factory-gouda-2622700/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>setup.py file (requirements, author, pointers to package, entry_points (console scripts)</li>
+                <li>LICENSE file</li>
+                <li>README.md/README.rst/README.txt</li>
+                <li>setup.cfg, MANIFEST.in</li>
+                <li>Your Package</li>
+                <li>Alternatives - conda (not just python though)</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>CRAN</h3>
+            <img src="images/box.png" alt="Box" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/box-cardboard-package-parcel-brown-158523/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Comprehensive R Archive Network</li>
+                <li>Large list of strict requirements</li>
+                <li>Source availability,  testable, small size etc</li>
+                <li>Bioconductor, Omegahat, R-Forge</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>Matlab Custom Toolbox</h3>
+            <img src="images/toolbox.jpg" alt="ToolBox" />
+            <br />
+            <small>Image courtesy of <a href="https://pixabay.com/en/tools-diy-toolbox-clamp-1474146/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Guided process in the Matlab editor</li>
+                <li>Package up code, examples, documentation etc</li>
+                <li>Share manually or via Mathworks File Exchange</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3>Javascript (Umm which one!)</h3>
+            <img src="images/yarn.jpg" alt="Yarn" />
+            <br />
+            <small>Image courtest of <a href="https://pixabay.com/en/yarn-wool-cords-colorful-green-166877/">Pixabay</a></small>
+            <aside class="notes">
+              <ul>
+                <li>Most famous is npm</li>
+                <li>Newly introduced is yarn</li>
+                <li>Jam also exists</li>
+                <li>Bower packages html/css/... as well</li>
+                <li>Fly, Gulp, Brunch, Webpack, Broccoli, Grunt, Gobble</li>
+              </ul>
+            </aside>
           </section>
         </section>
         <section>
