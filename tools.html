@@ -6,20 +6,11 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/black.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../../lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		<link rel="stylesheet" href="../../plugin/highlight/zenburn.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -35,7 +26,7 @@
           <!--Database Background and Theory-->
           <section>
             <h1>Databases</h1>
-            <img src="images/database.jpg" alt="Databases" />
+            <img src="https://cdn.pixabay.com/photo/2017/01/05/11/57/database-1954920_960_720.jpg" alt="Databases" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/database-data-computer-network-1954920/">Pixabay</a></small>
             <aside class="notes">
@@ -47,7 +38,7 @@
           </section>
           <section>
             <h3>Navigational Databases</h3>
-            <img src="images/network.jpg" alt="Network" />
+            <img src="https://cdn.pixabay.com/photo/2018/02/12/16/48/network-3148727_960_720.jpg" alt="Network" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/network-internet-connection-3148727/">Pixabay</a></small>
             <aside class="notes">
@@ -62,7 +53,7 @@
           </section>
           <section>
             <h3>Relational Databases</h3>
-            <img src="images/schema.png" alt="Database Schema" />
+            <img src="https://cdn.pixabay.com/photo/2016/12/09/18/30/database-schema-1895779_960_720.png" alt="Database Schema" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/database-schema-data-tables-schema-1895779/">Pixabay</a></small>
             <aside class="notes">
@@ -77,7 +68,7 @@
           </section>
           <section>
             <h3>NoSQL Databases</h3>
-            <img src="images/documents.png" alt="Document File" />
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/11/36/documents-158461_960_720.png" alt="Document File" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/documents-folder-office-text-file-158461/">Pixabay</a></small>
             <aside class="notes">
@@ -253,7 +244,7 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
           </section>
           <section>
             <h3>First Generation</h3>
-            <img src="images/lock.jpg" alt="Lock" />
+            <img src="https://cdn.pixabay.com/photo/2018/01/19/08/24/security-3091943_960_720.jpg" alt="Lock" width=600px />
             <br />
             <small>Image from <a href="https://pixabay.com/en/security-rusty-iron-lock-chain-3091943/">Pixabay</a></small>
             <aside class="notes">
@@ -267,7 +258,7 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
           </section>
           <section>
             <h3>Second Generation</h3>
-            <img src="images/centralised.jpg" alt="Central authority" />
+            <img src="https://cdn.pixabay.com/photo/2017/08/30/17/26/analytics-2697949_960_720.jpg" alt="Central authority" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/analytics-computer-hiring-database-2697949/">Pixabay</a></small>
             <aside class="notes">
@@ -282,7 +273,7 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
           </section>
           <section>
             <h3>Third Generation</h3>
-            <img src="images/we.png" alt="WeMe" />
+            <img src="https://cdn.pixabay.com/photo/2017/02/18/19/23/we-2078025_960_720.png" alt="WeMe" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/we-me-us-one-individual-separate-2078025/">Pixabay</a></small>
             <aside class="notes">
@@ -307,7 +298,7 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
           </section>
           <section>
             <h3>The rise of Git</h3>
-            <img src="images/github.png" alt="GitHub" />
+            <img src="https://cdn.pixabay.com/photo/2014/07/15/23/36/github-394322_960_720.png" alt="GitHub" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/github-logo-social-coding-brand-394322/">Pixabay</a></small>
             <aside class="notes">
@@ -444,21 +435,24 @@ SELECT * FROM [t1] LEFT OUTER JOIN [t2] ON [t1].[column] = [t2].[column];</code>
 			</div>
 		</div>
 
-		<script src="../../lib/js/head.min.js"></script>
-		<script src="../../js/reveal.js"></script>
-
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
-				dependencies: [
-					{ src: '../../plugin/markdown/marked.js' },
-					{ src: '../../plugin/markdown/markdown.js' },
-					{ src: '../../plugin/notes/notes.js', async: true },
-					{ src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealNotes, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
 	</body>
 </html>

@@ -6,20 +6,12 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/black.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../../lib/css/zenburn.css">
+		<link rel="stylesheet" href="../../plugin/highlight/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -31,7 +23,7 @@
           <!--REFACTORING-->
           <section>
             <h2>Refactoring</h2>
-            <img src="images/decking.jpg" alt="Oil the decking" />
+            <img src="https://cdn.pixabay.com/photo/2016/10/16/11/29/painting-1744953_960_720.jpg" alt="Oil the decking" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/deck-wood-paint-wooden-house-1744953/">Pixabay</a></small>
             <aside class="notes">
@@ -92,7 +84,7 @@ for l in list:
           <!--COMMENTING CODE-->
           <section>
             <h2>How to commment your code</h2>
-            <img src="images/comments.jpg" alt="Make a comment" />
+            <img src="https://cdn.pixabay.com/photo/2014/02/13/07/28/cms-265128_960_720.jpg" alt="Make a comment" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/cms-wordpress-265128/">Pixabay</a></small>
             <aside class="notes">
@@ -260,7 +252,7 @@ the_result = analysis_function(parameter1,
           <!--CHECKING CODE-->
           <section>
             <h2>Checking over your code</h2>
-            <img src="images/qc.jpg" alt="Quality Control" />
+            <img src="https://cdn.pixabay.com/photo/2014/12/17/07/28/businesswoman-571153_960_720.jpg" alt="Quality Control" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/businesswoman-presentation-suit-571153/">Pixabay</a></small>
           </section>
@@ -282,7 +274,7 @@ the_result = analysis_function(parameter1,
           </section>
           <section>
             <h3>Pair Programming</h3>
-            <img src="images/pair.jpg" alt="Pair Programming" />
+            <img src="https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_960_720.jpg" alt="Pair Programming" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/office-two-people-business-team-1209640/">Pixabay</a></small>
             <aside class="notes">
@@ -310,7 +302,7 @@ the_result = analysis_function(parameter1,
           </section>
           <section>
             <h3>Rubber Duck Debugging</h3>
-            <img src="images/rubberduck.jpg" alt="Rubber Duck" />
+            <img src="https://cdn.pixabay.com/photo/2014/11/26/14/38/rubber-duck-546253_960_720.jpg" alt="Rubber Duck" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/rubber-duck-duck-doll-546253/">Pixabay</a></small>
             <aside class="notes">
@@ -327,7 +319,7 @@ the_result = analysis_function(parameter1,
           <!--AUTOMATION-->
           <section>
             <h2>Automate Everything</h2>
-            <img src="images/robotarm.jpg" alt="Robot Arm" />
+            <img src="https://cdn.pixabay.com/photo/2017/09/27/10/30/robot-2791671_960_720.jpg" alt="Robot Arm" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/robot-arm-technology-robot-arm-2791671/">Pixabay</a></small>
             <aside class="notes">
@@ -371,7 +363,7 @@ the_result = analysis_function(parameter1,
           <!--OPTIMISATION-->
           <section>
             <h2>Optimising your code</h2>
-            <img src="images/money.png" alt="TimeIsMoney" />
+            <img src="https://cdn.pixabay.com/photo/2018/03/11/09/08/stopwatch-3216241_960_720.png" alt="TimeIsMoney" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/stopwatch-time-money-saying-3216241/">Pixabay</a></small>
             <aside class="notes">
@@ -402,7 +394,7 @@ the_result = analysis_function(parameter1,
           <!--TESTING-->
           <section>
             <h2>Testing your code</h2>
-            <img src="images/magnify.png" alt="Magnify the text" />
+            <img src="https://cdn.pixabay.com/photo/2012/04/14/14/00/magnifying-glass-34032_960_720.png" alt="Magnify the text" width=600px />
             <br />
             <small>Image courtesy of <a href="https://pixabay.com/en/magnifying-glass-lens-bug-zoom-34032/">Pixabay</a></small>
             <aside class="notes">
@@ -447,21 +439,24 @@ the_result = analysis_function(parameter1,
 			</div>
 		</div>
 
-		<script src="../../lib/js/head.min.js"></script>
-		<script src="../../js/reveal.js"></script>
-
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
-				dependencies: [
-					{ src: '../../plugin/markdown/marked.js' },
-					{ src: '../../plugin/markdown/markdown.js' },
-					{ src: '../../plugin/notes/notes.js', async: true },
-					{ src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealNotes, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
 	</body>
 </html>
